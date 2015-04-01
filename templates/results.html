@@ -1,6 +1,8 @@
+$def with(auctionList)
+
 <html>
   <head>
-    <title>Search : miniEbay</title>
+    <title>Search Results : miniEbay</title>
     <link rel="stylesheet" href="static/main.css" type="text/css"/>
   </head>
   
@@ -19,12 +21,12 @@
     
     <div id="content">
       <div id="main">
-        <div id="searchBar">
-          <form method="POST" action="results">
-            <input type="text" name="query">
-            <input type="submit" value="Search">
-          </form>
-        </div>
+        <h1>Search Results</h1>
+        
+        <ul>
+          $for auction in auctionList:
+            <li><a href=$auction.title>$auction.title</a></li>
+        </ul>
       </div>
       
       <div id="footer">
